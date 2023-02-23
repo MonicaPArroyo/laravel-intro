@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -13,17 +14,17 @@ class PageController extends Controller
 
     public function blog()
     {
-        $post = [
-            ['id' =>'1', 'title' => 'PHP',     'slug' => 'php'],
-            ['id' =>'2', 'title' => 'Laravel', 'slug' => 'laravel'],
-        ];
-        return view('blog', ['posts' => $post]);
+        // $posts = Post::get();
+        // $posts = Post::first();
+        // $posts = Post::find();
+
+        $posts = Post::latest()->paginate();
+        return view('blog', ['posts' => $posts]);
     }
 
-    public function post($slug)
+    public function post(Post $post)
     {
         // Simular consulta a base de datos
-        $post = $slug;
         return view('post', ['post' => $post]);
     }
 }
