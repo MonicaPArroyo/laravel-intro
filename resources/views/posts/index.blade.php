@@ -9,7 +9,22 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("Listado de publicaciones") }}
+                    <table class="mb-4">
+                        @forelse ($posts as $post)
+                        <tr class="border-b border-gray-200 dark:border-gray-700 text-sm">
+                            <td class="px-6 py-4">{{ $post->title }}</td>
+                            <td class="px-6 py-4">
+                                <a href="" class="text-indigo-600">Editar</a>
+                            </td>
+                            <td class="px-5 py-4">Eliminar</td>
+                        </tr>
+                        @empty
+                        <tr class="border-b border-gray-200 dark:border-gray-700 text-sm">
+                            Upps! no hay ninguna publicación disponible
+                        </tr>
+                        @endforelse
+                    </table>
+                    {{ $posts->links() }}
                 </div>
             </div>
         </div>
