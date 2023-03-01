@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex items-center justify-between">
             {{ __('Posts') }}
-            <a href="{{ route('posts.create') }}" class="text-xs bg-gray-800 dark:bg-gray-200 text-gray-100 dark:text-gray-900 rounded px-2 py-1">Crear</a>
+            <a href="{{ route('posts.create') }}" class="text-xs bg-indigo-600 dark:bg-indigo-600 rounded px-2 py-1">Crear</a>
         </h2>
     </x-slot>
 
@@ -21,7 +21,7 @@
                                 <form action="{{ route('posts.destroy', $post)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="submit" value="Eliminar" class="bg-gray-800 dark:bg-gray-200 text-gray-100 dark:text-gray-900 rounded px-4 py-2" onclick="return confirm('¿Desea eliminar?')">
+                                    <input type="submit" value="Eliminar" class="bg-indigo-600 dark:bg-indigo-600 rounded px-4 py-2" onclick="return confirm('¿Desea eliminar?')">
                                 </form>
                             </td>
                         </tr>
