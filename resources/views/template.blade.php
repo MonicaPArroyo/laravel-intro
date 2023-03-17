@@ -12,11 +12,11 @@
     <div class="container px-4 mx-auto">
         <header class="flex justify-between items-center py-4">
             <div class="flex items-center flex-grow gap-4">
-                <a href="{{ route('dashboard')}}">
+                <a href="{{ route('home')}}">
                     <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="logo" class="h-12">
                 </a>
-                <form action="">
-                    <input type="text" name="" id="">
+                <form action=" {{route('home') }}" method="GET" class="flex-grow">
+                    <input type="text" name="search" placeholder="Buscar" value="{{ request('search') }}" class="border border-gray-200 rounded py-2 w-1/2">
                 </form>
             </div>
             @auth
