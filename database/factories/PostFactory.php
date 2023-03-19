@@ -18,10 +18,10 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 1,
+            'user_id' => rand(1,10),
             'title' => $title = $this->faker->sentence(),
             'slug'  => Str::slug($title),
-            'body'  => $this->faker->text(2200),
+            'body'  => $this->faker->text(1600),
         ];
     }
 }
